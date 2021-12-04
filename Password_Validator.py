@@ -18,18 +18,20 @@ def password():
     print("""\n\033[4mPassword Requirements\033[0m
     Your password should have:
         \033[3m\033[93mAtleast 15 characters\033[0m
-        \033[3m\033[94mAtleast one uppercase letter\033[0m
+        \033[3m\033[92mAtleast one uppercase letter\033[0m
         \033[3m\033[35mAtleast one number\033[0m
-        \033[3m\033[92mAtleast one special character (!#$%&()*+,-./:;<=>?@[\]^_{|}~)\033[0m
+        \033[3m\033[94mAtleast one special character (!#$%&()*+,-./:;<=>?@[\]^_{|}~)\033[0m
     """)
     specialSymbol = '$' '@' '#' '!' '%' '&' '(' ')' '*' '+' ',' '-' '.' ';' '/' ':' '<' '=' '>' '?' '[' ']' '^' '_' '{' '|''}' '~'
     while True:
         try:
-            password = input("\033[31m\033[47mPlease enter a password: ")
+            password = input("\033[32mPlease enter a password: \033[0m")
         except ValueError:
-            print("Password Invalid")
+            print("\033[31mPassword Invalid")
         if len(password) == 0:
-            print("Password is empty")
+            print("\033[31mPassword is empty\033[0m")
+        elif len(password) < 15:
+            print("Password is too short")
         else:
             break
 
