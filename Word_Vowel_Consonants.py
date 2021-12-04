@@ -9,11 +9,11 @@
 
 #intro
 def intro():
-    print ('\nHello, welcome to word, vowel, and consonant counter\n')
+    print ('\n\033[47m\033[30m**Hello, welcome to word, vowel, and consonant counter**\n\033[0m')
 intro()
 
 #user input
-sentence = input('Please type in the sentence here: ').upper()
+sentence = input('\033[92mPlease type in the sentence here: \033[0m').upper()
 
 #variables needed
 vowel = "AEIOU"
