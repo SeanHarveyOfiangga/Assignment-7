@@ -44,4 +44,7 @@ word_count = word_counter(sentence, space)
 vowel_count = vowel_counter(sentence, vowel)
 consonant_count = consonant_counter(sentence, consonant)
 
-print(consonant_count)
+def output():
+    print (f"You entered: {sentence}\n Word(s): {word_count}\n Vowel(s): {vowel_count}\n Consonant(s): {consonant_count}")
+    print("\nThank you for using this program!")
+output()
