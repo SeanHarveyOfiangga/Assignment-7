@@ -57,3 +57,5 @@ def output():
     print (f"\nYou entered: {sentence}\n Word(s): {word_count}\n Vowel(s): {vowel_count}\n Consonant(s): {consonant_count}")
     print("\nThank you for using this program!")
 output()
+
+#program completed
