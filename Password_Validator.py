@@ -21,17 +21,19 @@ def password():
         \033[3m\033[92mAtleast one uppercase letter\033[0m
         \033[3m\033[35mAtleast one number\033[0m
         \033[3m\033[94mAtleast one special character (!#$%&()*+,-./:;<=>?@[\]^_{|}~)\033[0m
-    """)
+    ********************************************************************""")
     specialSymbol = '$' '@' '#' '!' '%' '&' '(' ')' '*' '+' ',' '-' '.' ';' '/' ':' '<' '=' '>' '?' '[' ']' '^' '_' '{' '|''}' '~'
     while True:
         try:
-            password = input("\033[32mPlease enter a password: \033[0m")
+            password = input("\n\033[32mPlease enter a password: \033[0m")
         except ValueError:
             print("\033[31mPassword Invalid")
         if len(password) == 0:
             print("\033[31mPassword is empty\033[0m")
-        elif len(password) < 15:
-            print("Password is too short")
+        if len(password) < 15:
+            print("\033[31mPassword is too short\033[0m")
+        if not any(character.isupper() for character in password):
+            print("\033[31mPassword should have atleast one uppercase letter\033[0m")
         else:
             break
 
