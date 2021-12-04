@@ -22,20 +22,28 @@ def password():
         \033[3m\033[35mAtleast one number\033[0m
         \033[3m\033[94mAtleast one special character (!#$%&()*+,-./:;<=>?@[\]^_{|}~)\033[0m
     ********************************************************************""")
-    specialSymbol = '$' '@' '#' '!' '%' '&' '(' ')' '*' '+' ',' '-' '.' ';' '/' ':' '<' '=' '>' '?' '[' ']' '^' '_' '{' '|''}' '~'
+    specialchar = '$' '@' '#' '!' '%' '&' '(' ')' '*' '+' ',' '-' '.' ';' '/' ':' '<' '=' '>' '?' '[' ']' '^' '_' '{' '|''}' '~'
     while True:
+        passwordvalidity = True
         try:
             password = input("\n\033[32mPlease enter a password: \033[0m")
         except ValueError:
             print("\033[31mPassword Invalid")
         if len(password) == 0:
             print("\033[31mPassword is empty\033[0m")
+            passwordvalidity = False
         if len(password) < 15:
             print("\033[31mPassword is too short\033[0m")
+            passwordvalidity = False
         if not any(character.isupper() for character in password):
             print("\033[31mPassword should have atleast one uppercase letter\033[0m")
+            passwordvalidity = False
         if not any(character.isdigit() for character in password):
             print("\033[31mPassword should have atleast one number\033[0m")
+            passwordvalidity = False
+        if not any(character in specialchar for character in password):
+            print("\033[31mPassword should have atleast one special character\033[0m")
+            passwordvalidity = False
         else:
             break
 
