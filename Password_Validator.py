@@ -34,6 +34,8 @@ def password():
             print("\033[31mPassword is too short\033[0m")
         if not any(character.isupper() for character in password):
             print("\033[31mPassword should have atleast one uppercase letter\033[0m")
+        if not any(character.isdigit() for character in password):
+            print("\033[31mPassword should have atleast one number\033[0m")
         else:
             break
 
