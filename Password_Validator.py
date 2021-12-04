@@ -15,7 +15,23 @@ def intro():
 intro()
 
 def password():
-    password = input("\n\033[92mPlease enter a password: \033[0m")
-    print(password)
+    print("""\n\033[4mPassword Requirements\033[0m
+    Your password should have:
+        \033[3m\033[93mAtleast 15 characters\033[0m
+        \033[3m\033[94mAtleast one uppercase letter\033[0m
+        \033[3m\033[35mAtleast one number\033[0m
+        \033[3m\033[92mAtleast one special character (!#$%&()*+,-./:;<=>?@[\]^_{|}~)\033[0m
+    """)
+    specialSymbol = '$' '@' '#' '!' '%' '&' '(' ')' '*' '+' ',' '-' '.' ';' '/' ':' '<' '=' '>' '?' '[' ']' '^' '_' '{' '|''}' '~'
+    while True:
+        try:
+            password = input("\033[31m\033[47mPlease enter a password: ")
+        except ValueError:
+            print("Password Invalid")
+        if len(password) == 0:
+            print("Password is empty")
+        else:
+            break
 
+    
 password()
