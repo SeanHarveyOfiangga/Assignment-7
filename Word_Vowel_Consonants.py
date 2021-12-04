@@ -12,8 +12,10 @@ def intro():
 intro()
 
 sentence = input('Please type in the sentence here: ').upper()
-vowel = 'A' 'E' 'I' 'O' 'U'
-space = ' '
+vowel = "AEIOU"
+space = " "
+consonant = "BCDFGJKLMNPQSTVXZHRWY"
+
 def vowel_counter(sentence, vowel):
     vcount = 0
     for c in sentence:
@@ -30,7 +32,16 @@ def word_counter(sentence, space):
                 wordcount = wordcount + 1
     return wordcount
 
+def consonant_counter(sentence, consonant):
+    ccount = 0
+    for c in sentence:
+        for d in consonant:
+            if c == d:
+                ccount = ccount + 1
+    return ccount
+
 word_count = word_counter(sentence, space)
 vowel_count = vowel_counter(sentence, vowel)
+consonant_count = consonant_counter(sentence, consonant)
 
-print(word_count)
+print(consonant_count)
